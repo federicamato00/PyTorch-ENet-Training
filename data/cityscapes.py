@@ -20,20 +20,20 @@ class Cityscapes(data.Dataset):
 
     """
     # Training dataset root folders
-    train_folder = "leftImg8bit_trainvaltest/leftImg8bit/train"
-    train_lbl_folder = "gtFine_trainvaltest/gtFine/train"
+    train_folder = "leftImg8bit/train"
+    train_lbl_folder = "gtFine/train"
 
     # Validation dataset root folders
-    val_folder = "leftImg8bit_trainvaltest/leftImg8bit/val"
-    val_lbl_folder = "gtFine_trainvaltest/gtFine/val"
+    val_folder = "leftImg8bit/val"
+    val_lbl_folder = "gtFine/val"
 
     # Test dataset root folders
-    test_folder = "leftImg8bit_trainvaltest/leftImg8bit/test"
-    test_lbl_folder = "gtFine_trainvaltest/gtFine/test"
+    test_folder = "leftImg8bit/test"
+    test_lbl_folder = "gtFine/test"
 
     # Filters to find the images
     img_extension = '.png'
-    lbl_name_filter = 'labelIds'
+    lbl_name_filter = 'labelTrainIds'
 
     # The values associated with the 35 classes
     full_classes = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
