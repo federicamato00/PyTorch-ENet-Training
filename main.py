@@ -6,7 +6,7 @@ import torch.optim as optim
 import torch.optim.lr_scheduler as lr_scheduler
 import torch.utils.data as data
 import torchvision.transforms as transforms
-
+import numpy
 from PIL import Image
 
 import transforms as ext_transforms
@@ -46,6 +46,8 @@ def load_dataset(dataset):
         args.dataset_dir,
         transform=image_transform,
         label_transform=label_transform)
+    print("train_set:")
+    print(args.dataset_dir)
     train_loader = data.DataLoader(
         train_set,
         batch_size=args.batch_size,
@@ -96,6 +98,7 @@ def load_dataset(dataset):
     if args.mode.lower() == 'test':
         images, labels = iter(test_loader).next()
     else:
+        print(len(train_loader))
         images, labels = iter(train_loader).next()
     print("Image size:", images.size())
     print("Label size:", labels.size())
