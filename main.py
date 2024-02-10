@@ -96,10 +96,10 @@ def load_dataset(dataset):
 
     # Get a batch of samples to display
     if args.mode.lower() == 'test':
-        images, labels = iter(test_loader).next()
+        images, labels = next(iter(test_loader))
     else:
         print(len(train_loader))
-        images, labels = iter(train_loader).next()
+        images, labels = next(iter(train_loader))
     print("Image size:", images.size())
     print("Label size:", labels.size())
     print("Class-color encoding:", class_encoding)
@@ -251,7 +251,7 @@ def test(model, test_loader, class_weights, class_encoding):
     # Show a batch of samples and labels
     if args.imshow_batch:
         print("A batch of predictions from the test set...")
-        images, _ = iter(test_loader).next()
+        images, _ = next(iter(test_loader))
         predict(model, images, class_encoding)
 
 
